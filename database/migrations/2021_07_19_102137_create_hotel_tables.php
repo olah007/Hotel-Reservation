@@ -46,7 +46,7 @@ class CreateHotelTables extends Migration
             $table->boolean('is_weekend')->default(false)->comment('If this is the weekend rate or not.');
             $table->timestamps();
 
-            $table->unique(['room_type_id', 'is_weekend']);
+            //$table->unique(['room_type_id', 'is_weekend']);
             $table->foreign('room_type_id')->references('id')->on('room_types');
         });
 
