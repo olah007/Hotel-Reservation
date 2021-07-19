@@ -24,7 +24,7 @@
         @forelse ($bookings as $booking)
             <tr>
                 <td>{{ $booking->id }}</td>
-                <td>{{ $booking->room_id }}</td>
+                <td>{{ $booking->room->number }} {{ $booking->room->roomType->name }}</td>
                 <td>{{ date('F d, Y', strtotime($booking->start)) }}</td>
                 <td>{{ date('F d, Y', strtotime($booking->end)) }}</td>
                 <td>{{ $booking->is_reservation ? 'Yes' : 'No' }}</td>
@@ -55,5 +55,6 @@
         @empty
         @endforelse
     </tbody>
-</table>    
+</table>  
+{{ $bookings->links() }}
 @endsection

@@ -23,7 +23,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/test', function() {return "Goodbye!"; });
 
-Route::get('/rooms', 'App\Http\Controllers\ShowRoomsController');
+Route::get('/rooms/{roomType?}', 'App\Http\Controllers\ShowRoomsController');
 
 Route::resource('bookings', 'App\Http\Controllers\BookingController');
 
